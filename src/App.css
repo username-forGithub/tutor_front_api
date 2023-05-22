@@ -1,0 +1,1133 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --mc: #006b82; 
+  --swiper-theme-color: #60d680;   
+  --swiper-navigation-color: #fff;
+
+  --level-one: translateZ(1rem);
+  --level-two: translateZ(2rem);
+  --level-three: translateZ(3rem);
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+body{
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;  
+}
+#root{
+  display: grid;
+  grid-template-columns: 1fr 4fr; 
+  /* width: 100vw; */
+  min-height: 100vh;
+  background-color: #000;
+}
+#root .left{ 
+  position: relative;
+  padding-top: 20px;  
+}
+#root .right{
+  padding-right: 20px;
+  overflow-y: auto;
+  position: relative;
+}
+.right:before{
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 3px;
+  background-color: #fff;
+  top: 0;
+  bottom: 0;  
+  z-index: 20;
+  animation: vertica_line 3s ease-in forwards;
+}
+@keyframes vertica_line {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+nav{
+  padding-left: 10px;
+  padding-right: 10px;    
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons li{
+  position: relative;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 3px;
+}
+.buttons li span{
+  position: absolute;
+  width: 100%;
+  height: 100%;  
+}
+
+.buttons li span:before{
+  content: "";
+  position: absolute;
+  inset: 5px 3px;
+  border-top: 1px solid #ccc;
+  filter: blur(2px);
+}
+.buttons li a{
+  position: relative;
+  z-index: 10;
+  font-size: 1.3rem;
+  color: #fcfcfc;
+  flex-basis: 100%;
+  text-align: right;
+  padding-right: 20px;
+  text-shadow: 0 0 3px #000000, 0 0 3px #000000;
+}
+.buttons li a.activated{
+  color: #fff;
+  text-shadow: 0 0 5px #219cf3,
+  0 0 8px #219cf3;
+
+}
+
+/* //////////////////////////////////////////// */
+.addtutor{
+  text-align: center;
+  color: #9e9a9a;
+}
+.app{
+  display: flex;
+}
+.logo{
+ margin-left: 5px;
+}
+.register-page,
+.login-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+section {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: var(--mc);
+}
+section form label span{
+  display: block;
+  padding-bottom: 5px;
+}
+section p a,
+section p,
+section h1,
+section form label{
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+}
+
+form input[type="text"],
+form input[type="password"],
+button,
+textarea {
+font-size: 18px;
+padding: 0.25rem;
+border-radius: 0.5rem;
+appearance: menulist-button;
+}
+
+form label,
+button {
+margin-top: 1rem;
+}
+
+button {
+padding: 0.5rem;
+}
+
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
+
+.instructions > svg {
+  margin-right: 0.25rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: #60d680;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
+}
+
+.imgwrapper{
+  aspect-ratio: 3/2;  
+}
+
+.listingImage{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiperwrap{
+  position: relative;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.swiper.swiper-horizontal{
+  position: unset;
+}
+
+.swiper a{
+  flex-basis: 100%;
+  padding: 20px 20px 0px;
+  display: flex;
+  flex-direction: column; 
+  text-decoration: none;
+  align-items: center;
+  color: #000;
+}
+
+.swiper .linkwrapper h3{
+  padding-top: 10px;
+}
+
+.swiper .linkwrapper a :nth-last-child(2){
+  padding: 10px 0;
+}
+
+.swiper .linkwrapper a :last-child{
+  margin-top: auto;
+}
+
+.swiper h5{
+  text-align: center;
+}
+
+.swiper .linkwrapper{
+  display: flex;
+  padding: 15px;
+  flex-basis: 100%;
+}
+
+.swiperwrap .swiper-slide{
+  display: flex;
+  height: initial;
+}
+
+.topwrapper{
+  width: 100%;
+}
+
+.linkwrapper{
+  position: relative;
+}
+
+.linkwrapper.single{
+  max-width: 350px;
+}
+
+.registersection input{
+  background-color: transparent;
+  border: none;
+  caret-color: #fff;
+  color: #fff;
+}
+
+.registersection label{
+  position: relative;
+  border-bottom: 2px solid #fff;
+}
+
+.registersection form label.yes{
+  margin-top: 35px;
+}
+
+.registersection input:focus{
+  outline: none;
+}
+
+.registersection .placeholderwrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.registersection button{
+  border: none;
+  cursor: pointer;
+}
+
+.registersection button:disabled {
+  background-color: rgba(255,255,255,0.8);
+  cursor: not-allowed;
+}
+
+.registersection,
+section.loginsection{
+  max-width: 230px;
+  padding: 30px;
+  min-height: 300px;
+}
+
+.loginsection form{
+  padding-bottom: 0;
+}
+
+.loginsection button{
+  border: none;
+  cursor: pointer;
+}
+
+.loginsection form input[type="password"],
+.loginsection input{
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  padding: 0;
+  max-width: 150px;
+}
+
+.loginsection input:focus{
+  outline: none;
+}
+
+.loginsection label{
+  border-bottom: 2px solid #fff;
+  position: relative;
+  display: flex;
+  padding-bottom: 5px;
+}
+
+.loginsection svg{
+  margin-left: auto;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+
+.loginsection .placeholder{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .5s;
+}
+
+.registersection input:focus ~ .placeholderwrapper,
+.registersection input:valid ~ .placeholderwrapper,
+.loginsection input:focus ~ .placeholder,
+.loginsection input:valid ~ .placeholder{
+  top: -25px;
+  transition: all .5s;
+  color: #999;
+}
+ 
+.addTutorWrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity .5s;
+  transition-delay: 0.2s;
+}
+
+.addTutorWrapper.active{
+  opacity: 1;  
+}
+
+.registersection,
+.loginsection,
+.addTutorSection{
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255,255,255,0.1);
+  /* backdrop-filter: blur(5px); */
+  box-shadow: 0 0 30px rgba(255,255,255,0.8);
+}
+
+.addTutorSection select{
+  width: 80%;
+  padding: 5px;;
+}
+
+.choose{
+  display: flex;
+  justify-content: space-between;  
+}
+
+.choose label{
+  flex-basis:50%;
+  margin-top: 0;
+}
+
+.css-1n6sfyn-MenuList > div{
+  color: #000;
+}
+
+
+
+#price{
+  border: none;  
+  padding: 5px;
+}
+
+#price:focus{
+  outline: none;
+}
+
+.price-wrapper .css-10xc5sb-control{
+  min-height: 38px;
+  display: flex;
+}
+
+.price-wrapper input{
+  flex-basis: 100%;
+  border-radius: 4px;
+}
+
+.menu{
+  display: none;
+}
+
+.drop{
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: #eff0f4;
+  border-radius: 50%;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.1),
+  inset -2px -5px 10px rgba(255,255,255,1),
+  15px 15px 10px rgba(0,0,0,0.05),
+  15px 10px 15px rgba(0,0,0,0.025);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2d8f85;
+  border: none;
+}
+
+.title{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  color: #fff;
+}
+
+.logowrapper{
+  padding-bottom: 25%;
+}
+
+.logoinnerclass{
+  width: 200px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+}
+.logo img{
+  max-width: 100px;
+}
+.layout{
+  background-color: rgba(0,0,0,1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  opacity: 1;
+}
+.layout.deactive{
+  opacity: 0;
+  background-color: rgba(0,0,0,0);
+  pointer-events: none;
+  visibility: hidden;
+}
+.welcom{
+  width: 60%; 
+  /* transition: all 1s;
+  opacity: 1;  */
+}
+/* .layout.deactive .welcom{
+  opacity: 0;
+} */
+
+
+.layoutleft{
+  background-color: rgba(0,0,0,1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: 99990;
+  pointer-events: none;
+}
+.layoutleft.deactive{
+  transition: 2s ;
+  background-color: rgba(0,0,0,0.0);
+}
+
+.firstline input{
+  width: calc(100% - 10px);
+  border: none;
+
+}
+
+.uploadwrapper input#image{
+  background-color: transparent;
+  padding: 7px;
+  border-radius: 6px;
+  width: calc(100% - 14px);
+}
+
+#arealabel{
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------ card effect ------------ */
+
+.card .image{
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+.card .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #000;
+}
+
+.card{
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.card:before{
+  border-radius: 100%;
+  transform: translateY(calc(-60px - (200 * ((100% - 200px) / 300))));
+  left: -84%;
+  content: "";
+  position: absolute;
+  width: 135%;
+  aspect-ratio: 1 / 1;
+  background: #fff;
+}
+
+.card .card-content{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px 0px;
+}
+
+.card .social-media{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card .social-media svg{
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card .social-media i:hover{
+  color: #fff;
+}
+
+.card .name-profession{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.name-profession .name{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.name-profession .profession{
+  height: 100px;
+  width: 150px;
+}
+
+.card .rating{
+  display: flex;
+  align-items: center;
+}
+
+.card .rating i{
+  font-size: 18px;
+  color: #fff;
+  margin: 0 2px;
+}
+
+.button1{
+  display: flex;
+  justify-content: space-around;
+  /* width: 110%; */
+}
+
+.button1 button{
+  background: #fff;
+  border:none;
+  outline: none;
+  color: #000;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button1 button:hover{
+  background: #fff;
+}
+
+.delbutton{
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background: #fff;
+  border: none;
+  outline: none;
+  color: #000;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.rating svg{
+  color: #fff;
+}
+
+/* ------------ card effect ------------ */
+.stars{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.addTutorSection label{
+  position: relative;
+  padding-top: 30px;
+  border-bottom: 2px solid #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.addTutorSection h2{
+  color: #fff;
+  margin-left: 0.5em;
+  margin-top: 1rem;
+}
+
+.addTutorSection button{
+  width: calc(100% - 1rem);
+    align-self: center;
+}
+
+.price .css-b62m3t-container,
+.price .css-10xc5sb-control,
+.price .css-13cymwt-control{
+  position: unset;
+}
+
+.addTutorSection input{
+  border: none;
+}
+
+.loginsection input:-webkit-autofill,
+.loginsection input:-webkit-autofill:hover, 
+.loginsection input:-webkit-autofill:focus, 
+.loginsection input:-webkit-autofill:active,
+.addTutorSection input:-webkit-autofill,
+.addTutorSection input:-webkit-autofill:hover, 
+.addTutorSection input:-webkit-autofill:focus, 
+.addTutorSection input:-webkit-autofill:active{
+  transition: background-color 5000000s ease-in-out 0s, color 600000s 0s;
+}
+
+.addTutorSection form input[type="text"]{
+  padding-bottom: 0;
+}
+
+.addTutorSection #tutorContent:focus,
+.addTutorSection input:focus{
+  outline: none;
+}
+
+.addTutorSection .css-10xc5sb-control{
+ box-shadow: none;
+ border-color: transparent;
+}
+
+.addTutorSection .css-10xc5sb-control:hover{
+ border-color: transparent;  
+}
+
+#image,
+#tutorContent,
+#price,
+input#name{
+  background-color: transparent !important;
+  border: none;
+  caret-color:#fff;
+  color: #fff;
+  padding-bottom: 0px;
+}
+
+input#name{
+  transform: translateY(5px);
+}
+
+#arealabel #tutorContent:valid~.placeholder,
+#arealabel #tutorContent:focus~.placeholder{
+  top: 15px;
+  transition: all .5s;
+  color: #999;
+}
+
+#titlename .placeholder,
+#arealabel .placeholder,
+.css-13cymwt-control .placeholder{
+  top: 40px;
+  left: 0px;
+  color: #ffffff;
+  position: absolute;
+  transition: all .5s;
+}
+
+#name:valid~.placeholder,
+#name:focus~.placeholder{
+  top: 15px;
+  transition: all .5s;
+  color: #999;
+}
+
+.css-10xc5sb-control .placeholder{
+  top: 15px;
+  left: 0;
+  color: #999;
+  position: absolute;
+  transition: all .5s;
+}
+
+label .css-b62m3t-container,
+label .css-10xc5sb-control,
+label .css-13cymwt-control,
+label .css-3w2yfm-ValueContainer,
+label .css-1fdsijx-ValueContainer,
+label .css-hlgwow,
+label .css-1dyz3mf{
+  overflow: visible;
+  position: unset !important;
+  background-color: transparent;
+  border: none;
+}
+
+.css-1fdsijx-ValueContainer .css-1dimb5e-singleValue{
+  color: #fff;
+}
+
+.css-13cymwt-control .css-hlgwow .css-1dimb5e-singleValue~.css-19bb58m:before,
+.css-13cymwt-control .css-1dyz3mf .css-1p3m7a8-multiValue~.css-19bb58m:before{
+  top: 15px;
+  color: #999;
+}
+
+.css-13cymwt-control .css-19bb58m:before{
+  position: absolute;
+  top: 40px;
+  left: 0;
+  color: #ffffff;
+  transition: all .5s;
+}
+
+.css-10xc5sb-control .css-19bb58m:before{
+  position: absolute;
+  top: 15px;
+  left: 0;
+  color: #999;
+  transition: all .5s;
+}
+
+#titlename .css-qbdosj-Input:before{
+  content: "Name";
+}
+#subject .css-19bb58m:before{
+  content: "Subject";
+}
+#experience .css-19bb58m:before{
+  content: "Experience";
+}
+#language .css-19bb58m:before{
+  content: "Languages";
+}
+
+.css-1hb7zxy-IndicatorsContainer{
+  display: none !important;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.singleWrapper{
+  position: relative;
+  z-index: 10;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  transition: opacity 2s ease-in;
+}
+
+.singleWrapper.opac{
+  opacity: 0;
+}
+
+.singleWrapper .descr{
+  max-width: 300px;
+}
+
+.singleWrapper aside{ 
+  position: relative;   
+  flex-grow: 0;
+  width: 20%;
+  margin-left: 4%;
+  margin-right: 1%;
+  overflow: hidden;
+}
+
+.singleWrapper article{
+  flex-grow: 1;
+  padding-top: 40px;
+  padding-right: 20px;
+}
+
+.singleWrapper .outerwrapper{
+  position: relative;
+  display: flex;  
+  transform: translateY(1000px);
+  animation: mymove 3s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+  from {transform: translateY(1000px);}
+  to {transform: translateY(15%);}
+}
+
+.rocketwrapper img{
+  width: 100%;
+  display: block;
+}
+
+.singleImage{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.maskouter{
+  position: absolute;
+  transform: translate(48%, 106%);
+  width: 51%;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 3px 3px rgb(255, 255, 255);
+  opacity: 0;
+  animation: increaseopacity 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.maskclass{ 
+  width: 100%;
+  height: 100%; 
+}
+
+.singleWrapper .rocketwrapper{
+  z-index: 1;
+ animation: move2 3s;
+ animation-delay: 7s;
+ animation-fill-mode: forwards;
+}
+
+@keyframes move2 {
+ from {transform: translateY(0%);}
+ to {transform: translateY(-200%);}
+}
+
+ .addres.active{
+  background-color: #fff;
+  pointer-events: none;
+  display: block;
+  opacity: 1;
+  animation: reduceopacity 2s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+ }
+
+ @keyframes reduceopacity {
+  from {}
+  to {opacity: 0;}
+ }
+
+ .bigwrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+ }
+
+ .bigwrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ }
+
+ /* singlepage  */
+
+ .rightcontent{
+  padding-top: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+  border: 2px solid #fff;
+  position: relative;
+ }
+ .rightcontent .key{
+  position: absolute;
+  display: inline-block;
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 0 5px;
+  top: -12px;
+  left: 25px;
+ }
+ .rightcontent .value{
+  font-size: 16px;
+  padding-left: 10px;
+ }
+ article button{
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 0;
+  padding: 11px;
+  cursor: pointer;
+ }
+
+ /* singlepage end */
+
+ .addreserve{
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(255,255,255,0.8);
+ }
+ .addreserve select{
+  margin-top: 15px;
+  background-color: transparent;
+  color:#fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+ }
+ .addreserve select:focus{
+  outline: none;
+ }
+ .addreserve option{
+  color: #000;
+ }
+ .addreserve label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+ .addreserve input{
+  margin-top: 15px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+ }
+ .addreserve button{
+  cursor: pointer;
+ }
+
+ .addReserveWrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center; 
+  opacity: 0;
+  animation: increaseopacity 3s;
+  animation-fill-mode: forwards; 
+ }
+ @keyframes increaseopacity {
+  from {}
+  to {opacity: 1;}
+ }
+.addreserve input[type="date"]::-webkit-inner-spin-button,
+.addreserve input[type="date"]::-webkit-calendar-picker-indicator {
+    /* display: none;
+    -webkit-appearance: none; */
+    /* color: #fff; */
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+}
+ .datewrapper{
+  color: #fff;
+ }
+
+ .reservationswrapper{
+  height: 100%;
+  display: flex;
+  align-items: center;
+ }
+.soon{
+  display: none;
+}
+.addTutorSection .css-1wy0on6{
+  display: none;
+}
+.css-qr46ko div{
+  color: #000;
+}
+.choose .css-1dimb5e-singleValue{
+  color: #fff;
+}
+@media (max-width: 767px) {
+  #root{
+    display: block;
+    grid-template-columns: auto; 
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+  }
+  #root .left{
+    display: none;
+  }
+  #root .right{
+    display: none;
+  }
+  .soon{
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+}

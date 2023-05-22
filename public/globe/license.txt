@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hello World Globe
+* source:	https://sketchfab.com/3d-models/hello-world-globe-266caf8af61c44ac93c1384aa174f2cb
+* author:	moritz.kampelmann (https://sketchfab.com/moritz.kampelmann)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hello World Globe" (https://sketchfab.com/3d-models/hello-world-globe-266caf8af61c44ac93c1384aa174f2cb) by moritz.kampelmann (https://sketchfab.com/moritz.kampelmann) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
