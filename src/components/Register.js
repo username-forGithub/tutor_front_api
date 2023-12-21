@@ -5,9 +5,9 @@ import { faCheck, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from '../api/axios';
 
-const USER_REGEX = /^[A-z][A-z0-9-_@.]{3,23}$/;
-// const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%-_]).{8,24}$/;
-const PWD_REGEX = /^(?=.*[a-z]).{1,24}$/;
+const USER_REGEX = /^[A-z][A-z0-9-_@.]{6,23}$/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%-_]).{8,24}$/;
+// const PWD_REGEX = /^(?=.*[a-z]).{1,24}$/;
 const signupurl = '/signup';
 
 const Register = () => {
